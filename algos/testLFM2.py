@@ -2,11 +2,11 @@ import sys
 
 sys.path.append(
     'D:/Desktop/huhao/mdnotebook/__overlapping__community detection/code')
-import util18ji.filepath as fp
-import util18ji.NMI as nmi
-from util18ji.onmi import onmi
-from util18ji.eq import ExtendQ
-import util18ji.util as ut
+import algos.util18ji.filepath as fp
+import algos.util18ji.NMI as nmi
+from algos.util18ji.onmi import onmi
+from algos.util18ji.eq import ExtendQ
+import algos.util18ji.util as ut
 from networkx.algorithms import community
 import networkx as nx
 import igraph as ig

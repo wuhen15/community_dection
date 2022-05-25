@@ -6,8 +6,8 @@ import random
 import networkx as nx
 import matplotlib.pyplot as plt
 import zipfile
-from util18ji.onmi import onmi
-from util18ji.eq import ExtendQ
+from algos.util18ji.onmi import onmi
+from algos.util18ji.eq import ExtendQ
 import collections
 from collections import defaultdict
 import csv

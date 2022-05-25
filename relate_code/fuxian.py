@@ -1,13 +1,13 @@
 import networkx as nx
 from networkx import jaccard_coefficient
-import util.filepath as fp
-import util.NMI as nmi
-import util.modularity as md
+import relate_code.util.filepath as fp
+import relate_code.util.NMI as nmi
+import relate_code.util.modularity as md
 # import math
 # import util.tools as tools
-import util.lfrTools as lfrtool
+import relate_code.util.lfrTools as lfrtool
 import numpy as np
-import util.util as ut
+import relate_code.util as ut
 from time import *
 #得到节点度大小排序序列字典
 def get_hexinzz(G):

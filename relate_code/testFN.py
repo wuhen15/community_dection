@@ -1,12 +1,12 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 from networkx import jaccard_coefficient
-import util.filepath as fp
-import util.NMI as nmi
-import util.modularity as md
+import relate_code.util.filepath as fp
+import relate_code.util.NMI as nmi
+import relate_code.util.modularity as md
 import math
-import util.tools as tools
-import util.lfrTools as lfrtool
+import relate_code.util.tools as tools
+import relate_code.util.lfrTools as lfrtool
 import networkx as nx
 from networkx.algorithms import community
 from networkx.algorithms.community import greedy_modularity_communities
