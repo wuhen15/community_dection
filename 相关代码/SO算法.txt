@@ -1,0 +1,26 @@
+from networkx.algorithms import community
+from util import graphTools as gt
+import networkx as nx
+from igraph import*
+arpack_options.maxiter = 300000
+
+def Run_SO(G):
+    G_Zero = gt.copy_GraphToZeroBegin(G)
+    origin_edges = nx.to_edgelist(G_Zero)
+    new_list = []
+    for edge_i in range(0, len(origin_edges)):
+        node_dict = list(origin_edges)[edge_i]
+        new_list.append([node_dict[0], node_dict[1]])
+    graph = Graph(new_list)  # 用变向量列表创建图形
+    partition = graph.community_leading_eigenvector(clusters=None,weights=None,arpack_options=None)#SO算法
+    communities = list(partition)  # 对系统树图进行切割，按照Q值最大的标准
+    if min(G.nodes()) != min(G_Zero.nodes()):
+        gt.AllNodesAddOne(communities)
+    Q = community.modularity(G, communities)
+    return communities, Q
+if __name__ == '__main__':
+    path = "../Police/network/510_message.txt"
+    G = gt.load_graph(path)#根据加载图
+    com, Q = Run_SO(G)
+    # com:社团划分结果，数据类型：[[],[]]
+    # Q:模块度
